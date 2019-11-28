@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1152</width>
+    <height>522</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QTableWidget" name="history_tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>601</width>
+     <height>491</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Comic Sans MS&quot;;</string>
+   </property>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>190</number>
+   </attribute>
+   <column>
+    <property name="text">
+     <string>Кол-во попыток</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Сложность</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Время</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QPushButton" name="clear_history">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>20</y>
+     <width>521</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 16pt &quot;Comic Sans MS&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Очистить историю</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
