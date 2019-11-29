@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1152</width>
-    <height>522</height>
+    <height>645</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -64,6 +64,23 @@ background-color: rgb(255, 255, 0);</string>
    </property>
    <property name="text">
     <string>Очистить историю</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="back_to_farm">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>90</y>
+     <width>521</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 16pt &quot;Comic Sans MS&quot;;
+background-color: rgb(255, 255, 0);</string>
+   </property>
+   <property name="text">
+    <string>Обратно на ферму</string>
    </property>
   </widget>
  </widget>

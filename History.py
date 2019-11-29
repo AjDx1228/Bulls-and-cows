@@ -15,6 +15,10 @@ class History(QWidget):
         self.init_table()
 
         self.clear_history.clicked.connect(self.clear_history_in_db)
+        self.back_to_farm.clicked.connect(self.show_game)
+    
+    def show_game(self):
+        self.parent().show_game()
 
     def init_table(self):
         self.table = HistoryDataBase()

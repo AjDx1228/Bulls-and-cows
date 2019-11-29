@@ -51,7 +51,7 @@
     <string>Удачи!</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="game_btn">
+  <widget class="QPushButton" name="OK_btn">
    <property name="geometry">
     <rect>
      <x>300</x>
@@ -65,7 +65,7 @@
 font: 16pt &quot;Comic Sans MS&quot;;</string>
    </property>
    <property name="text">
-    <string>Отправиться на ферму</string>
+    <string>Го на ферму </string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">

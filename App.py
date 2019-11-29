@@ -21,25 +21,16 @@ class App(QMainWindow):
         self.set_design_of_main_menu()
     
     def show_game(self):
-        self.game_widget = Gamecl()
-        widget = QWidget()
-        layout = QVBoxLayout(widget)
-        layout.addWidget(self.game_widget)
-        self.setCentralWidget(widget)
+        game_widget = Game()
+        self.setCentralWidget(game_widget)
 
     def show_history(self):
-        self.history_widget = History()
-        widget = QWidget()
-        layout = QVBoxLayout(widget)
-        layout.addWidget(self.history_widget)
-        self.setCentralWidget(widget)
+        history_widget = History()
+        self.setCentralWidget(history_widget)
     
     def show_how_to_play(self):
         self.instruction_widget = Instruction()
-        widget = QWidget()
-        layout = QVBoxLayout(widget)
-        layout.addWidget(self.instruction_widget)
-        self.setCentralWidget(widget)
+        self.setCentralWidget(self.instruction_widget)
     
     def set_design_of_main_menu(self):
         Yandex_icon_img = QPixmap('yandex.png')

@@ -32,18 +32,10 @@ class Game(QWidget):
         self.finish_game_btn.setEnabled(False)
     
     def show_history(self):
-        self.history_widget = History()
-        widget = QWidget()
-        layout = QVBoxLayout(widget)
-        layout.addWidget(self.history_widget)
-        self.setCentralWidget(widget)
+        self.parent().show_history()
     
     def show_how_to_play(self):
-        self.instruction_widget = Instruction()
-        widget = QWidget()
-        layout = QVBoxLayout(widget)
-        layout.addWidget(self.instruction_widget)
-        self.setCentralWidget(widget)
+        self.parent().show_how_to_play()
 
     def set_difficulty_level(self):
         index = self.difficulty_select.currentIndex()
