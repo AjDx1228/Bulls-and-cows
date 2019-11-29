@@ -19,6 +19,8 @@ class Game(QWidget):
         self.start_game_btn.clicked.connect(self.start_game)
         self.guess_btn.clicked.connect(self.guess_number)
         self.finish_game_btn.clicked.connect(self.finish_game)
+        self.history_btn.clicked.connect(self.show_history)
+        self.how_to_play_btn.clicked.connect(self.show_how_to_play)
 
         # Connect handlers of inputs
         self.input_choice.textChanged.connect(self.change_input)
@@ -28,6 +30,20 @@ class Game(QWidget):
         self.set_difficulty_level()
         self.screen_of_game.setVisible(False)
         self.finish_game_btn.setEnabled(False)
+    
+    def show_history(self):
+        self.history_widget = History()
+        widget = QWidget()
+        layout = QVBoxLayout(widget)
+        layout.addWidget(self.history_widget)
+        self.setCentralWidget(widget)
+    
+    def show_how_to_play(self):
+        self.instruction_widget = Instruction()
+        widget = QWidget()
+        layout = QVBoxLayout(widget)
+        layout.addWidget(self.instruction_widget)
+        self.setCentralWidget(widget)
 
     def set_difficulty_level(self):
         index = self.difficulty_select.currentIndex()

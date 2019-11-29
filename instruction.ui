@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1161</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 255, 255);</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>100</y>
+     <width>991</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 16pt &quot;Segoe Print&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Компьютер задумывает число, состоящее из 2, 3 или 4 различных цифр от 1 до 9 (в зависимости от уровня сложности игры). Игрок делает ходы, чтобы узнать эти цифры и их порядок. В ответ компьютер показывает количество быков (отгаданных цифр, стоящих на своих местах) и количество коров (отгаданных цифр, стоящих не на своих местах). Цель игры: угадать задуманное компьютером число, сделав как можно меньше ходов.</string>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>440</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 24pt &quot;Wide Latin&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Удачи!</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="game_btn">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>510</y>
+     <width>531</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 0);
+font: 16pt &quot;Comic Sans MS&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Отправиться на ферму</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>340</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 16pt &quot;Segoe Print&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Пример:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>330</y>
+     <width>951</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 16pt &quot;Segoe Print&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Компьютер задумал число: 5834. Игрок сделал ход: 8134. Компьютер ответил: 2 быка (цифры 3 и 4) и 1 корова (цифра 8).</string>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>20</y>
+     <width>241</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 24pt &quot;Segoe Print&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Правила игры</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

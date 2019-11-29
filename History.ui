@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 255, 255);</string>
+  </property>
   <widget class="QTableWidget" name="history_tableWidget">
    <property name="geometry">
     <rect>
@@ -23,7 +26,9 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 12pt &quot;Comic Sans MS&quot;;</string>
+    <string notr="true">font: 12pt &quot;Comic Sans MS&quot;;
+
+</string>
    </property>
    <attribute name="horizontalHeaderDefaultSectionSize">
     <number>190</number>
@@ -54,7 +59,8 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 16pt &quot;Comic Sans MS&quot;;</string>
+    <string notr="true">font: 16pt &quot;Comic Sans MS&quot;;
+background-color: rgb(255, 255, 0);</string>
    </property>
    <property name="text">
     <string>Очистить историю</string>
