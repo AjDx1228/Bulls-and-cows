@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1160</width>
-    <height>600</height>
+    <width>1167</width>
+    <height>637</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(0, 255, 255);</string>
+   <string notr="true"/>
   </property>
   <widget class="QGroupBox" name="main_window_of_app">
    <property name="geometry">
@@ -75,7 +75,7 @@
     <property name="title">
      <string/>
     </property>
-    <widget class="QWidget" name="layoutWidget">
+    <widget class="QWidget" name="layoutWidget_2">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -84,7 +84,7 @@
        <height>33</height>
       </rect>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QLineEdit" name="input_choice"/>
       </item>
@@ -103,6 +103,61 @@ background-color: rgb(255, 255, 0);</string>
        </widget>
       </item>
      </layout>
+    </widget>
+    <widget class="QLabel" name="cow_img">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>230</y>
+       <width>141</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>cow_img</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="bull_img">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>50</y>
+       <width>141</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>bull_img</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="X_img">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>70</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>X</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="X_img2">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>260</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>X</string>
+     </property>
     </widget>
     <widget class="QLabel" name="bull_label">
      <property name="geometry">
@@ -136,60 +191,8 @@ background-color: rgb(255, 255, 0);</string>
       <string>0</string>
      </property>
     </widget>
-    <widget class="QLabel" name="bull_img">
-     <property name="geometry">
-      <rect>
-       <x>270</x>
-       <y>50</y>
-       <width>141</width>
-       <height>141</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>bull_img</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="cow_img">
-     <property name="geometry">
-      <rect>
-       <x>270</x>
-       <y>220</y>
-       <width>141</width>
-       <height>141</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>cow_img</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="X_img">
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>70</y>
-       <width>71</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>X</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="X_img2">
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>260</y>
-       <width>71</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>X</string>
-     </property>
-    </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_2">
+   <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
       <x>800</x>
@@ -197,6 +200,9 @@ background-color: rgb(255, 255, 0);</string>
       <width>331</width>
       <height>441</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Comic Sans MS&quot;;</string>
     </property>
     <property name="title">
      <string>Ход игры</string>
@@ -214,8 +220,7 @@ background-color: rgb(255, 255, 0);</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 12pt &quot;Comic Sans MS&quot;;
-selection-background-color: rgb(85, 255, 255);</string>
+      <string notr="true">font: 12pt &quot;Comic Sans MS&quot;;</string>
      </property>
      <property name="editTriggers">
       <set>QAbstractItemView::NoEditTriggers</set>
@@ -243,7 +248,7 @@ selection-background-color: rgb(85, 255, 255);</string>
      </column>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QGroupBox" name="groupBox_4">
     <property name="enabled">
      <bool>true</bool>
     </property>
@@ -307,7 +312,7 @@ selection-background-color: rgb(85, 255, 255);</string>
       <string>2</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_4">
+    <widget class="QLabel" name="label_5">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -323,7 +328,7 @@ selection-background-color: rgb(85, 255, 255);</string>
       <string>Кол-во цифр:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -419,7 +424,29 @@ font: 12pt &quot;Comic Sans MS&quot;;</string>
      <string>Забыл как играть?</string>
     </property>
    </widget>
+   <zorder>screen_of_game</zorder>
+   <zorder>win_img</zorder>
+   <zorder>action_label</zorder>
+   <zorder>groupBox_3</zorder>
+   <zorder>groupBox_4</zorder>
+   <zorder>history_btn</zorder>
+   <zorder>how_to_play_btn</zorder>
   </widget>
+  <widget class="QLabel" name="background_game">
+   <property name="geometry">
+    <rect>
+     <x>-10</x>
+     <y>-10</y>
+     <width>1191</width>
+     <height>661</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>background_game</zorder>
+  <zorder>main_window_of_app</zorder>
  </widget>
  <resources/>
  <connections/>

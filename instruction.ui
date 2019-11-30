@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1161</width>
-    <height>640</height>
+    <width>1149</width>
+    <height>634</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(0, 255, 255);</string>
+   <string notr="true"/>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -65,7 +65,7 @@
 font: 16pt &quot;Comic Sans MS&quot;;</string>
    </property>
    <property name="text">
-    <string>Го на ферму </string>
+    <string>Пошли играть!</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -119,6 +119,26 @@ font: 16pt &quot;Comic Sans MS&quot;;</string>
     <string>Правила игры</string>
    </property>
   </widget>
+  <widget class="QLabel" name="background_instruction">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1161</width>
+     <height>641</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>background_instruction</zorder>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>OK_btn</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_5</zorder>
  </widget>
  <resources/>
  <connections/>

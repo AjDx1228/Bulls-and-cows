@@ -7,14 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>1152</width>
-    <height>645</height>
+    <height>650</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(0, 255, 255);</string>
+   <string notr="true"/>
   </property>
   <widget class="QTableWidget" name="history_tableWidget">
    <property name="geometry">
@@ -83,6 +83,23 @@ background-color: rgb(255, 255, 0);</string>
     <string>Обратно на ферму</string>
    </property>
   </widget>
+  <widget class="QLabel" name="background_history">
+   <property name="geometry">
+    <rect>
+     <x>-10</x>
+     <y>-10</y>
+     <width>1171</width>
+     <height>671</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>background_history</zorder>
+  <zorder>history_tableWidget</zorder>
+  <zorder>clear_history</zorder>
+  <zorder>back_to_farm</zorder>
  </widget>
  <resources/>
  <connections/>

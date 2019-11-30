@@ -30,6 +30,10 @@ class Game(QWidget):
         self.set_difficulty_level()
         self.screen_of_game.setVisible(False)
         self.finish_game_btn.setEnabled(False)
+        self.set_background_game()
+    
+    def set_background_game(self):
+        self.background_game.setPixmap(QPixmap('background_game.jpg'))
     
     def show_history(self):
         self.parent().show_history()

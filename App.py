@@ -19,6 +19,10 @@ class App(QMainWindow):
         self.how_to_play_btn.clicked.connect(self.show_how_to_play)
 
         self.set_design_of_main_menu()
+        self.set_background_menu()
+    
+    def set_background_menu(self):
+        self.background_menu.setPixmap(QPixmap('background_menu.jpg'))
     
     def show_game(self):
         game_widget = Game()

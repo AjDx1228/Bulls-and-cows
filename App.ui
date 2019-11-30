@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1163</width>
-    <height>636</height>
+    <width>1159</width>
+    <height>631</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(0, 255, 255);</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="play_btn">
@@ -120,6 +120,27 @@
      <string>Быки и Коровы</string>
     </property>
    </widget>
+   <widget class="QLabel" name="background_menu">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>-20</y>
+      <width>1261</width>
+      <height>671</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>background_menu</zorder>
+   <zorder>play_btn</zorder>
+   <zorder>history_btn</zorder>
+   <zorder>how_to_play_btn</zorder>
+   <zorder>Yandex_icon</zorder>
+   <zorder>bull_img</zorder>
+   <zorder>cow_img</zorder>
+   <zorder>label_3</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
