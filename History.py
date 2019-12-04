@@ -5,7 +5,7 @@ import sqlite3
 from PyQt5.QtGui import QPixmap
 
 from DataBase import HistoryDataBase
-
+from constants import DIFFICULTY_LEVELS, DIFFICULTY_LITERALS
 
 class History(QWidget):
     def __init__(self):
@@ -13,10 +13,11 @@ class History(QWidget):
 
         uic.loadUi('History.ui',self)
 
-        self.init_table()
+        self.refresh_table()
 
         self.clear_history.clicked.connect(self.clear_history_in_db)
         self.back_to_farm.clicked.connect(self.show_game)
+        self.difficulty_select.currentTextChanged.connect(self.refresh_table)
 
         self.set_background_history()
     
@@ -25,13 +26,28 @@ class History(QWidget):
     
     def show_game(self):
         self.parent().show_game()
+    
+    def clear_table(self):
+        self.history_tableWidget.clear()
+        self.history_tableWidget.setHorizontalHeaderLabels(["Кол-во попыток", "Сложность", "Время"])
+        self.history_tableWidget.setRowCount(0)
 
-    def init_table(self):
+    def refresh_table(self):
         self.table = HistoryDataBase()
         self.table.connect()
-        cur = self.table.get_all()
 
-        rows_count = self.table.get_rows_count()
+        index = self.difficulty_select.currentIndex()
+
+        if index == 0:
+            self.clear_table()
+            cur = self.table.get_all()
+            rows_count = self.table.get_rows_count()
+        else:
+            self.clear_table()
+            complexity = DIFFICULTY_LITERALS[index - 1]
+            cur = self.table.get_history_games(complexity)
+            rows_count = self.table.get_rows_count_for_any_complexity(complexity)
+
         self.history_tableWidget.setRowCount(rows_count)
 
         for row, form in enumerate(cur):
@@ -44,7 +60,6 @@ class History(QWidget):
         self.table = HistoryDataBase()
         self.table.connect()
 
-        self.table.action_of_clear_history()
         self.history_tableWidget.clear()
         self.history_tableWidget.setHorizontalHeaderLabels(["Кол-во попыток", "Сложность", "Время"])
         self.history_tableWidget.setRowCount(0)

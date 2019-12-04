@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>menu_window</class>
+ <widget class="QMainWindow" name="menu_window">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -13,56 +13,48 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
   <property name="styleSheet">
    <string notr="true"/>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="play_btn">
     <property name="geometry">
      <rect>
       <x>330</x>
-      <y>310</y>
+      <y>460</y>
       <width>491</width>
       <height>71</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 0);</string>
+     <string notr="true">background-color: rgb(255, 255, 0);
+font: 16pt &quot;Comic Sans MS&quot;;</string>
     </property>
     <property name="text">
-     <string>Играть</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="history_btn">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>400</y>
-      <width>491</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 0);</string>
-    </property>
-    <property name="text">
-     <string>История</string>
+     <string>Вперед, на ферму!</string>
     </property>
    </widget>
    <widget class="QPushButton" name="how_to_play_btn">
     <property name="geometry">
      <rect>
       <x>330</x>
-      <y>490</y>
+      <y>540</y>
       <width>491</width>
       <height>71</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 0);</string>
+     <string notr="true">background-color: rgb(255, 255, 0);
+font: 16pt &quot;Comic Sans MS&quot;;</string>
     </property>
     <property name="text">
-     <string>Как играть</string>
+     <string>Узнай, как играть!</string>
     </property>
    </widget>
    <widget class="QLabel" name="Yandex_icon">
@@ -135,7 +127,6 @@
    </widget>
    <zorder>background_menu</zorder>
    <zorder>play_btn</zorder>
-   <zorder>history_btn</zorder>
    <zorder>how_to_play_btn</zorder>
    <zorder>Yandex_icon</zorder>
    <zorder>bull_img</zorder>

@@ -1,6 +1,6 @@
 import sys
 from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QVBoxLayout
+from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPixmap
 
@@ -15,11 +15,15 @@ class App(QMainWindow):
         uic.loadUi('App.ui', self)
 
         self.play_btn.clicked.connect(self.show_game)
-        self.history_btn.clicked.connect(self.show_history)
         self.how_to_play_btn.clicked.connect(self.show_how_to_play)
 
         self.set_design_of_main_menu()
         self.set_background_menu()
+        self.initUI()
+    
+    def initUI(self):
+        self.setWindowFlags(Qt.CustomizeWindowHint | Qt.WindowMinimizeButtonHint | Qt.WindowCloseButtonHint)
+        self.setFixedSize(1159, 631)
     
     def set_background_menu(self):
         self.background_menu.setPixmap(QPixmap('background_menu.jpg'))

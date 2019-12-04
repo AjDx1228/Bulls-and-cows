@@ -52,9 +52,9 @@
   <widget class="QPushButton" name="clear_history">
    <property name="geometry">
     <rect>
-     <x>620</x>
+     <x>750</x>
      <y>20</y>
-     <width>521</width>
+     <width>391</width>
      <height>51</height>
     </rect>
    </property>
@@ -69,9 +69,9 @@ background-color: rgb(255, 255, 0);</string>
   <widget class="QPushButton" name="back_to_farm">
    <property name="geometry">
     <rect>
-     <x>620</x>
-     <y>90</y>
-     <width>521</width>
+     <x>750</x>
+     <y>100</y>
+     <width>391</width>
      <height>51</height>
     </rect>
    </property>
@@ -86,8 +86,8 @@ background-color: rgb(255, 255, 0);</string>
   <widget class="QLabel" name="background_history">
    <property name="geometry">
     <rect>
-     <x>-10</x>
-     <y>-10</y>
+     <x>-20</x>
+     <y>-30</y>
      <width>1171</width>
      <height>671</height>
     </rect>
@@ -96,10 +96,63 @@ background-color: rgb(255, 255, 0);</string>
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="background_menu">
+   <property name="geometry">
+    <rect>
+     <x>-110</x>
+     <y>-30</y>
+     <width>1261</width>
+     <height>671</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="difficulty_select">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>20</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 10pt &quot;Comic Sans MS&quot;;</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>Вся история</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Легкий</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Средний</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Сложный</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Очень сложный</string>
+    </property>
+   </item>
+  </widget>
+  <zorder>background_menu</zorder>
   <zorder>background_history</zorder>
   <zorder>history_tableWidget</zorder>
   <zorder>clear_history</zorder>
   <zorder>back_to_farm</zorder>
+  <zorder>difficulty_select</zorder>
  </widget>
  <resources/>
  <connections/>
