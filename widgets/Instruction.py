@@ -8,14 +8,18 @@ class Instruction(QWidget):
     def __init__(self):
         super().__init__()
 
-        uic.loadUi('instruction.ui', self)
+        # Set UI file
+        uic.loadUi('../ui/instruction.ui', self)
 
+        # Connect handlers of buttons
         self.OK_btn.clicked.connect(self.show_game)
 
         self.set_background_instruction()
 
+    # Set background of the windows
     def set_background_instruction(self):
-        self.background_instruction.setPixmap(QPixmap('background_instruction.jpg'))
+        self.background_instruction.setPixmap(QPixmap('../images/background_instruction.jpg'))
 
+    # Show window of the game
     def show_game(self):
         self.parent().show_game()

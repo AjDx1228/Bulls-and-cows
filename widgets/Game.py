@@ -4,8 +4,8 @@ from PyQt5.QtCore import Qt, QRegExp
 from PyQt5.QtGui import QRegExpValidator, QPixmap
 import sqlite3
 import time
+import random
 
-import util
 from DataBase import HistoryDataBase
 from constants import DIFFICULTY_LEVELS, DIFFICULTY_LITERALS
 
@@ -13,7 +13,8 @@ class Game(QWidget):
     def __init__(self):
         super().__init__()
 
-        uic.loadUi('Game.ui',self)
+        # Set UI file 
+        uic.loadUi('../ui/Game.ui',self)
 
         # Connect handlers of buttons
         self.start_game_btn.clicked.connect(self.start_game)
@@ -31,16 +32,34 @@ class Game(QWidget):
         self.screen_of_game.setVisible(False)
         self.finish_game_btn.setEnabled(False)
         self.set_background_game()
-    
+
+    # Set background of the window
     def set_background_game(self):
-        self.background_game.setPixmap(QPixmap('background_game.jpg'))
-    
+        self.background_game.setPixmap(QPixmap('../images/background_game.jpg'))
+
+    # Show window of the history
     def show_history(self):
         self.parent().show_history()
     
+    # Show window of the instruction
     def show_how_to_play(self):
         self.parent().show_how_to_play()
+    
+    # Get random digit
+    def get_random_digit(variable_numbers, digit_capacity):
+        variable_numbers = variable_numbers.copy()
+        random_digit = ''
 
+        for i in range(digit_capacity):
+            random_number = random.choice(variable_numbers)
+            random_number_index = variable_numbers.index(random_number)
+            
+            random_digit += str(random_number)
+            del variable_numbers[random_number_index]
+
+        return random_digit
+
+    # Change diffculty of game
     def set_difficulty_level(self):
         index = self.difficulty_select.currentIndex()
         self.variable_numbers, self.digit_capacity = DIFFICULTY_LEVELS[index]
@@ -63,7 +82,7 @@ class Game(QWidget):
         self.tableWidget.setEnabled(True)
 
         self.set_design_of_result_area()
-        self.random_digit = util.get_random_digit(self.variable_numbers, self.digit_capacity)
+        self.random_digit = self.get_random_digit(self.variable_numbers, self.digit_capacity)
 
         self.n_rows = 1
         self.attempts = 0
@@ -89,17 +108,19 @@ class Game(QWidget):
         self.tableWidget.setRowCount(0)
         self.n_rows == 0
 
+    # Set design of the game
     def set_design_of_result_area(self):
-        image_X = QPixmap('X_img.png')
+        image_X = QPixmap('../images/X_img.png')
         self.X_img.setPixmap(image_X)
         self.X_img2.setPixmap(image_X)
         
-        img_cow = QPixmap('cow.png')
+        img_cow = QPixmap('../images/cow.png')
         self.cow_img.setPixmap(img_cow)
 
-        img_bull = QPixmap('bull.png')
+        img_bull = QPixmap('../images/bull.png')
         self.bull_img.setPixmap(img_bull)
 
+    # Set characteristics of the input 
     def change_input(self, text):
         if self.input_choice.text() != '' and len(str(self.input_choice.text())) == self.digit_capacity:
             self.guess_btn.setEnabled(True)
@@ -117,7 +138,8 @@ class Game(QWidget):
                 res += text[i]
 
         self.input_choice.setText(res)
-  
+
+    # Try to guess nubmer
     def guess_number(self):
         self.choice = self.input_choice.text()
         self.bull_count = 0
@@ -142,14 +164,17 @@ class Game(QWidget):
         self.cow_label.setText(str(self.cow_count))
         self.input_choice.setText('')
     
+    # Enter HotKey to try guess number
     def keyPressEvent(self, event):
         if event.key() - Qt.Key_Enter == -1 and self.guess_btn.isEnabled():
             self.guess_number()
         event.accept()
     
+    # Set horizontal header labels of the table
     def action_setHorizontalHeaderLabels(self):
         self.tableWidget.setHorizontalHeaderLabels(["Число", "Быки", "Коровы"])
     
+    # Output message if you win and add information about it in the table
     def win(self):
         history_table = HistoryDataBase()
         history_table.connect()
@@ -169,7 +194,7 @@ class Game(QWidget):
 
         self.win_img.setVisible(True)
 
-        img_of_win = QPixmap('img_when_win.png')
+        img_of_win = QPixmap('../images/img_when_win.png')
         self.win_img.setPixmap(img_of_win)
 
         self.tableWidget.clear()
@@ -181,7 +206,7 @@ class Game(QWidget):
 
         self.action_setHorizontalHeaderLabels()
 
-    
+    # Set value of the table
     def set_value_table(self):
         self.tableWidget.setRowCount(self.n_rows)
 

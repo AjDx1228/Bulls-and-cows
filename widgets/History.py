@@ -11,27 +11,34 @@ class History(QWidget):
     def __init__(self):
         super().__init__()
 
-        uic.loadUi('History.ui',self)
+        # Set UI file
+        uic.loadUi('../ui/History.ui',self)
 
+        # Acton with table
         self.refresh_table()
+        self.set_background_history()
 
-        self.clear_history.clicked.connect(self.clear_history_in_db)
+        # Connect handlers of buttons
+        self.clear_history.clicked.connect(self.clear_history_in_table)
         self.back_to_farm.clicked.connect(self.show_game)
         self.difficulty_select.currentTextChanged.connect(self.refresh_table)
+        
 
-        self.set_background_history()
-    
+    # Set background of the window
     def set_background_history(self):
-        self.background_history.setPixmap(QPixmap('background_history.jpg'))
+        self.background_history.setPixmap(QPixmap('../images/background_history.jpg'))
     
+    # Show window of the game
     def show_game(self):
         self.parent().show_game()
     
+    # Clear the table
     def clear_table(self):
         self.history_tableWidget.clear()
         self.history_tableWidget.setHorizontalHeaderLabels(["Кол-во попыток", "Сложность", "Время"])
         self.history_tableWidget.setRowCount(0)
 
+    # Reset table
     def refresh_table(self):
         self.table = HistoryDataBase()
         self.table.connect()
@@ -56,7 +63,8 @@ class History(QWidget):
 
         self.table.close()
 
-    def clear_history_in_db(self):
+    # Clear history in the table
+    def clear_history_in_table(self):
         self.table = HistoryDataBase()
         self.table.connect()
 
@@ -64,6 +72,4 @@ class History(QWidget):
         self.history_tableWidget.setHorizontalHeaderLabels(["Кол-во попыток", "Сложность", "Время"])
         self.history_tableWidget.setRowCount(0)
 
-        self.table.close()
-
-        
+        self.table.close()   
