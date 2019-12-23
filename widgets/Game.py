@@ -1,5 +1,5 @@
 from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QTableWidgetItem, QTableWidget
+from PyQt5.QtWidgets import QWidget, QTableWidgetItem, QTableWidget
 from PyQt5.QtCore import Qt, QRegExp
 from PyQt5.QtGui import QRegExpValidator, QPixmap
 import sqlite3
@@ -9,12 +9,13 @@ import random
 from DataBase import HistoryDataBase
 from constants import DIFFICULTY_LEVELS, DIFFICULTY_LITERALS
 
+
 class Game(QWidget):
     def __init__(self):
         super().__init__()
 
         # Set UI file 
-        uic.loadUi('../ui/Game.ui',self)
+        uic.loadUi('../ui/Game.ui', self)
 
         # Connect handlers of buttons
         self.start_game_btn.clicked.connect(self.start_game)
@@ -22,6 +23,7 @@ class Game(QWidget):
         self.finish_game_btn.clicked.connect(self.finish_game)
         self.history_btn.clicked.connect(self.show_history)
         self.how_to_play_btn.clicked.connect(self.show_how_to_play)
+        self.draft_btn.clicked.connect(self.show_draft)
 
         # Connect handlers of inputs
         self.input_choice.textChanged.connect(self.change_input)
@@ -30,12 +32,18 @@ class Game(QWidget):
         # Set initial settings
         self.set_difficulty_level()
         self.screen_of_game.setVisible(False)
-        self.finish_game_btn.setEnabled(False)
+        self.draft.setVisible(False)
+        self.info_draft.setVisible(False)
+        for i in range(10):
+            exec('self.n{}.setVisible(False)'.format(i))
         self.set_background_game()
+
+        self.count_finish = 1
 
     # Set background of the window
     def set_background_game(self):
-        self.background_game.setPixmap(QPixmap('../images/background_game.jpg'))
+        img = QPixmap('../images/background_game.jpg')
+        self.background_game.setPixmap(img)
 
     # Show window of the history
     def show_history(self):
@@ -46,7 +54,7 @@ class Game(QWidget):
         self.parent().show_how_to_play()
     
     # Get random digit
-    def get_random_digit(variable_numbers, digit_capacity):
+    def get_random_digit(self, variable_numbers, digit_capacity):
         variable_numbers = variable_numbers.copy()
         random_digit = ''
 
@@ -71,7 +79,6 @@ class Game(QWidget):
 
     def start_game(self):
         # Set initial UI settings
-        self.start_game_btn.setEnabled(False)
         self.screen_of_game.setVisible(True)
         self.difficulty_select.setEnabled(False)
         self.finish_game_btn.setEnabled(True)
@@ -79,13 +86,22 @@ class Game(QWidget):
         self.action_label.setText('Попробуйте угадать число')
 
         self.win_img.setVisible(False)
+        self.draft.setVisible(True)
         self.tableWidget.setEnabled(True)
+        self.history_btn.setVisible(False)
+        self.how_to_play_btn.setVisible(False)
+        self.start_game_btn.setVisible(False)
 
         self.set_design_of_result_area()
+
         self.random_digit = self.get_random_digit(self.variable_numbers, self.digit_capacity)
 
         self.n_rows = 1
         self.attempts = 0
+        self.draft_visible = False
+
+        self.count_finish = 0
+        self.finish_game_btn.setText('Завершить игру')
 
         self.time_start = time.time()
 
@@ -94,19 +110,32 @@ class Game(QWidget):
         self.action_setHorizontalHeaderLabels()
         
     def finish_game(self):
+        self.count_finish += 1
+        # Exit button
+        if self.count_finish == 1:
+            self.finish_game_btn.setText('Выйти из игры')
+        elif self.count_finish == 2:
+            exit()
+
         # Set initial UI settings
         self.screen_of_game.setVisible(False)
         self.difficulty_select.setEnabled(True)
-        self.start_game_btn.setEnabled(True)
-        self.finish_game_btn.setEnabled(False)  
         self.tableWidget.setEnabled(False)
+        self.draft.setVisible(False)
         self.win_img.setText('')
-        self.action_label.setText('Давай поиграем еще?')
+        Text = 'Твое число: {}.\n Давай поиграем еще?'
+        self.action_label.setText(Text.format(self.random_digit))
 
         self.tableWidget.clear()
         self.action_setHorizontalHeaderLabels()
         self.tableWidget.setRowCount(0)
         self.n_rows == 0
+        self.draft_visible = True
+        self.show_draft()
+
+        self.history_btn.setVisible(True)
+        self.how_to_play_btn.setVisible(True)
+        self.start_game_btn.setVisible(True)
 
     # Set design of the game
     def set_design_of_result_area(self):
@@ -122,7 +151,9 @@ class Game(QWidget):
 
     # Set characteristics of the input 
     def change_input(self, text):
-        if self.input_choice.text() != '' and len(str(self.input_choice.text())) == self.digit_capacity:
+        first_cond = self.input_choice.text() != ''
+        sec_cond = len(str(self.input_choice.text())) == self.digit_capacity
+        if first_cond and sec_cond:
             self.guess_btn.setEnabled(True)
         else:
             self.guess_btn.setEnabled(False)
@@ -176,6 +207,8 @@ class Game(QWidget):
     
     # Output message if you win and add information about it in the table
     def win(self):
+        self.finish_game_btn.setText('Выйти из игры')
+        self.count_finish = 1
         history_table = HistoryDataBase()
         history_table.connect()
 
@@ -188,9 +221,10 @@ class Game(QWidget):
 
         self.action_label.setText('Ты выиграл! Поиграем еще?')
         self.screen_of_game.setVisible(False)
-        self.finish_game_btn.setEnabled(False)
-        self.start_game_btn.setEnabled(True)
+        self.start_game_btn.setVisible(True)
         self.difficulty_select.setEnabled(True)
+        self.history_btn.setVisible(True)
+        self.how_to_play_btn.setVisible(True)
 
         self.win_img.setVisible(True)
 
@@ -206,12 +240,40 @@ class Game(QWidget):
 
         self.action_setHorizontalHeaderLabels()
 
+        self.draft.setVisible(False)
+        self.draft_visible = True
+        self.show_draft()
+
     # Set value of the table
     def set_value_table(self):
         self.tableWidget.setRowCount(self.n_rows)
 
-        self.tableWidget.setItem(self.n_rows - 1, 0, QTableWidgetItem(str(self.choice)))
-        self.tableWidget.setItem(self.n_rows - 1, 1, QTableWidgetItem(str(self.bull_count)))
-        self.tableWidget.setItem(self.n_rows - 1, 2, QTableWidgetItem(str(self.cow_count)))
+        n_rows_table = self.n_rows - 1
+        self.tableWidget.setItem(n_rows_table, 0, QTableWidgetItem(str(self.choice)))
+        self.tableWidget.setItem(n_rows_table, 1, QTableWidgetItem(str(self.bull_count)))
+        self.tableWidget.setItem(n_rows_table, 2, QTableWidgetItem(str(self.cow_count)))
 
         self.n_rows += 1
+    
+    def visible_of_checkbox(self, flag):
+        for i in self.variable_numbers:
+            if not flag:
+                exec('self.n{}.setChecked(False)'.format(i))
+            exec('self.n{}.setVisible({})'.format(i, flag))
+            self.draft_visible = flag
+
+    def show_draft(self):
+        if not self.draft_visible:
+            line_of_numbers = '          '.join(self.variable_numbers)
+            self.numbers_of_draft.setText(line_of_numbers)
+            self.visible_of_checkbox(True)
+            self.info_draft.setVisible(True)
+            self.draft_btn.setText('Отключи, если мешает')
+        
+        else:
+            line = ' ' * 95
+            self.numbers_of_draft.setText(line)
+            self.visible_of_checkbox(False)    
+            self.info_draft.setVisible(False)
+            self.draft_btn.setText('Включи помощника')
+            

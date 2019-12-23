@@ -8,6 +8,7 @@ from Game import Game
 from History import History
 from Instruction import Instruction
 
+
 class App(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -28,12 +29,12 @@ class App(QMainWindow):
 
     # Set fixed size of the window
     def initUI(self):
-        self.setWindowFlags(Qt.CustomizeWindowHint | Qt.WindowMinimizeButtonHint | Qt.WindowCloseButtonHint)
-        self.setFixedSize(1159, 631)
+        self.setFixedSize(1147, 655)
 
     # Set background of the window
     def set_background_menu(self):
-        self.background_menu.setPixmap(QPixmap('../images/background_game.jpg'))
+        img = QPixmap('../images/background_menu.jpg')
+        self.background_menu.setPixmap(img)
 
     # Show window of the game
     def show_game(self):
@@ -66,3 +67,4 @@ if __name__ == '__main__':
     ex = App()
     ex.show()
     sys.exit(app.exec())
+    

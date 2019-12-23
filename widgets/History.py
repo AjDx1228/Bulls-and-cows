@@ -1,5 +1,5 @@
 from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QTableWidgetItem, QTableWidget
+from PyQt5.QtWidgets import QWidget, QTableWidgetItem, QTableWidget
 from PyQt5.QtCore import Qt
 import sqlite3
 from PyQt5.QtGui import QPixmap
@@ -7,12 +7,13 @@ from PyQt5.QtGui import QPixmap
 from DataBase import HistoryDataBase
 from constants import DIFFICULTY_LEVELS, DIFFICULTY_LITERALS
 
+
 class History(QWidget):
     def __init__(self):
         super().__init__()
 
         # Set UI file
-        uic.loadUi('../ui/History.ui',self)
+        uic.loadUi('../ui/History.ui', self)
 
         # Acton with table
         self.refresh_table()
@@ -23,10 +24,10 @@ class History(QWidget):
         self.back_to_farm.clicked.connect(self.show_game)
         self.difficulty_select.currentTextChanged.connect(self.refresh_table)
         
-
     # Set background of the window
     def set_background_history(self):
-        self.background_history.setPixmap(QPixmap('../images/background_history.jpg'))
+        img = QPixmap('../images/background_history.jpg')
+        self.background_history.setPixmap(img)
     
     # Show window of the game
     def show_game(self):
@@ -35,7 +36,8 @@ class History(QWidget):
     # Clear the table
     def clear_table(self):
         self.history_tableWidget.clear()
-        self.history_tableWidget.setHorizontalHeaderLabels(["Кол-во попыток", "Сложность", "Время"])
+        self.ar_of_tble = ["Кол-во попыток", "Сложность", "Время"]
+        self.history_tableWidget.setHorizontalHeaderLabels(self.ar_of_tble)
         self.history_tableWidget.setRowCount(0)
 
     # Reset table
@@ -53,7 +55,7 @@ class History(QWidget):
             self.clear_table()
             complexity = DIFFICULTY_LITERALS[index - 1]
             cur = self.table.get_history_games(complexity)
-            rows_count = self.table.get_rows_count_for_any_complexity(complexity)
+            rows_count = self.table.get_rows_count_for_complexity(complexity)
 
         self.history_tableWidget.setRowCount(rows_count)
 
@@ -67,9 +69,9 @@ class History(QWidget):
     def clear_history_in_table(self):
         self.table = HistoryDataBase()
         self.table.connect()
+        self.table.action_of_clear_history()
 
-        self.history_tableWidget.clear()
-        self.history_tableWidget.setHorizontalHeaderLabels(["Кол-во попыток", "Сложность", "Время"])
-        self.history_tableWidget.setRowCount(0)
+        self.clear_table()
 
         self.table.close()   
+        

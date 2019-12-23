@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
-    <height>637</height>
+    <width>1147</width>
+    <height>655</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,8 +21,8 @@
     <rect>
      <x>10</x>
      <y>20</y>
-     <width>1161</width>
-     <height>471</height>
+     <width>1131</width>
+     <height>461</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -48,9 +48,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>20</y>
-      <width>451</width>
-      <height>41</height>
+      <y>10</y>
+      <width>431</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -65,7 +65,7 @@
      <rect>
       <x>10</x>
       <y>70</y>
-      <width>451</width>
+      <width>421</width>
       <height>381</height>
      </rect>
     </property>
@@ -195,7 +195,7 @@ background-color: rgb(255, 255, 0);</string>
    <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
-      <x>800</x>
+      <x>770</x>
       <y>10</y>
       <width>351</width>
       <height>441</height>
@@ -272,9 +272,9 @@ background-color: rgb(255, 255, 0);</string>
     </property>
     <property name="geometry">
      <rect>
-      <x>480</x>
+      <x>440</x>
       <y>30</y>
-      <width>311</width>
+      <width>331</width>
       <height>301</height>
      </rect>
     </property>
@@ -365,7 +365,7 @@ background-color: rgb(255, 255, 0);</string>
     <widget class="QPushButton" name="start_game_btn">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>30</x>
        <y>170</y>
        <width>291</width>
        <height>41</height>
@@ -382,7 +382,7 @@ font: 16pt &quot;Comic Sans MS&quot;;</string>
     <widget class="QPushButton" name="finish_game_btn">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>30</x>
        <y>240</y>
        <width>291</width>
        <height>41</height>
@@ -393,7 +393,7 @@ font: 16pt &quot;Comic Sans MS&quot;;</string>
 font: 16pt &quot;Comic Sans MS&quot;;</string>
      </property>
      <property name="text">
-      <string>Завершить игру</string>
+      <string>Выйти из игры</string>
      </property>
     </widget>
     <widget class="QLabel" name="variable_numbers_label">
@@ -401,7 +401,7 @@ font: 16pt &quot;Comic Sans MS&quot;;</string>
       <rect>
        <x>130</x>
        <y>100</y>
-       <width>171</width>
+       <width>181</width>
        <height>16</height>
       </rect>
      </property>
@@ -413,7 +413,7 @@ font: 16pt &quot;Comic Sans MS&quot;;</string>
    <widget class="QPushButton" name="history_btn">
     <property name="geometry">
      <rect>
-      <x>490</x>
+      <x>470</x>
       <y>340</y>
       <width>291</width>
       <height>41</height>
@@ -430,8 +430,8 @@ font: 16pt &quot;Comic Sans MS&quot;;</string>
    <widget class="QPushButton" name="how_to_play_btn">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>410</y>
+      <x>470</x>
+      <y>400</y>
       <width>291</width>
       <height>41</height>
      </rect>
@@ -457,7 +457,7 @@ font: 16pt &quot;Comic Sans MS&quot;;</string>
     <rect>
      <x>-10</x>
      <y>-10</y>
-     <width>1191</width>
+     <width>1221</width>
      <height>661</height>
     </rect>
    </property>
@@ -465,8 +465,203 @@ font: 16pt &quot;Comic Sans MS&quot;;</string>
     <string/>
    </property>
   </widget>
+  <widget class="QGroupBox" name="draft">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>490</y>
+     <width>1131</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Comic Sans MS&quot;;</string>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QPushButton" name="draft_btn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>231</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="tabletTracking">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string>Включи помощника</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="numbers_of_draft">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>30</y>
+      <width>941</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="n0">
+    <property name="geometry">
+     <rect>
+      <x>176</x>
+      <y>70</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="n1">
+    <property name="geometry">
+     <rect>
+      <x>235</x>
+      <y>70</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="n2">
+    <property name="geometry">
+     <rect>
+      <x>295</x>
+      <y>70</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="n3">
+    <property name="geometry">
+     <rect>
+      <x>356</x>
+      <y>70</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="n4">
+    <property name="geometry">
+     <rect>
+      <x>415</x>
+      <y>70</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="n5">
+    <property name="geometry">
+     <rect>
+      <x>476</x>
+      <y>70</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="n6">
+    <property name="geometry">
+     <rect>
+      <x>536</x>
+      <y>70</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="n7">
+    <property name="geometry">
+     <rect>
+      <x>596</x>
+      <y>70</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="n8">
+    <property name="geometry">
+     <rect>
+      <x>655</x>
+      <y>70</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="n9">
+    <property name="geometry">
+     <rect>
+      <x>715</x>
+      <y>70</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="info_draft">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>90</y>
+      <width>1141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Можешь помечать галочкой цифры, которых по твоему мнению точно нет в числе! (или есть - на твой выбор)</string>
+    </property>
+   </widget>
+  </widget>
   <zorder>background_game</zorder>
   <zorder>main_window_of_app</zorder>
+  <zorder>draft</zorder>
  </widget>
  <resources/>
  <connections/>

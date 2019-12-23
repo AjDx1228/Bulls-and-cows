@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1159</width>
-    <height>631</height>
+    <width>1146</width>
+    <height>667</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,8 +26,8 @@
    <widget class="QPushButton" name="play_btn">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>460</y>
+      <x>370</x>
+      <y>430</y>
       <width>491</width>
       <height>71</height>
      </rect>
@@ -43,8 +43,8 @@ font: 16pt &quot;Comic Sans MS&quot;;</string>
    <widget class="QPushButton" name="how_to_play_btn">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>540</y>
+      <x>370</x>
+      <y>520</y>
       <width>491</width>
       <height>71</height>
      </rect>
@@ -86,7 +86,7 @@ font: 16pt &quot;Comic Sans MS&quot;;</string>
    <widget class="QLabel" name="cow_img">
     <property name="geometry">
      <rect>
-      <x>680</x>
+      <x>770</x>
       <y>20</y>
       <width>141</width>
       <height>141</height>
@@ -99,7 +99,7 @@ font: 16pt &quot;Comic Sans MS&quot;;</string>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>500</x>
       <y>190</y>
       <width>261</width>
       <height>71</height>
@@ -118,7 +118,7 @@ font: 16pt &quot;Comic Sans MS&quot;;</string>
       <x>-10</x>
       <y>-20</y>
       <width>1261</width>
-      <height>671</height>
+      <height>691</height>
      </rect>
     </property>
     <property name="text">
